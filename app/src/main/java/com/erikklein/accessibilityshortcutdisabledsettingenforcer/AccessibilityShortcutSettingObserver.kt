@@ -31,7 +31,7 @@ class AccessibilityShortcutSettingObserver(
                     "accessibility_shortcut_enabled",
                     desiredValue
                 )
-                Log.d("SettingsObserver", "Screen brightness reverted to $desiredValue")
+                Log.d("SettingsObserver", "AccessibilityShortcutEnabled reverted to $desiredValue")
             }
         } catch (e: Settings.SettingNotFoundException) {
             e.printStackTrace()
