@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -18,26 +19,6 @@ import com.erikklein.accessibilityshortcutdisabledsettingenforcer.ui.theme.Acces
 
 fun startSettingsMonitorService(context: Context) {
     val serviceIntent = Intent(context, Enforcer::class.java)
-
-    val channelId = "settings_monitor_channel"
-    val channelName = "Settings Monitor"
-    val notificationManager =
-        context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-    val channel = NotificationChannel(
-        channelId,
-        channelName,
-        NotificationManager.IMPORTANCE_LOW
-    )
-    notificationManager.createNotificationChannel(channel)
-
-    val notification: Notification = Notification.Builder(context, channelId)
-        .setContentTitle("Settings Monitor")
-        .setContentText("Monitoring system settings...")
-        .setSmallIcon(android.R.drawable.ic_menu_info_details)
-        .build()
-
-    notificationManager.notify(1, notification)
-
     context.startForegroundService(serviceIntent)
 }
 
