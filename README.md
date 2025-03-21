@@ -15,6 +15,4 @@ A computer with android debug bridge installed and connected to the device (You 
 
 It locks down the setting of accessibility shortcut state, to be turned off. Whenever the user tries to enable the shortcut, AccessibilityShortcutDisabledSettingEnforcer detects it and instantly disables it again. Use Andoff One to prevent uninstallation.
 
-## Soon
-
-Autostart has to be implemented, so that the service is started on boot.
+The service starts automatically on boot, and runs in the foreground. You can click on the app to restart it.

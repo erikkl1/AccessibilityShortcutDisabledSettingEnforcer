@@ -15,6 +15,7 @@ import com.erikklein.accessibilityshortcutdisabledsettingenforcer.ui.theme.Acces
 
 fun startSettingsMonitorService(context: Context) {
     val serviceIntent = Intent(context, Enforcer::class.java)
+    serviceIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     context.startForegroundService(serviceIntent)
 }
 
